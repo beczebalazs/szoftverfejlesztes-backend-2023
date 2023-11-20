@@ -59,7 +59,7 @@ app.get('/products', (req, res) => {
 app.post('/sign-in', (req, res) => {
 	const { email, password } = req.body;
 
-	fs.readFile('user.json', 'utf8', (err, data) => {
+	fs.readFile('src/user.json', 'utf8', (err, data) => {
 		if (err) {
 			console.error(err);
 			res.status(500).send('Error (Reading)');
@@ -118,7 +118,7 @@ app.post('/sign-up', (req, res) => {
 
 			existingUsers.push(newUser);
 
-			fs.writeFile('user.json', JSON.stringify(existingUsers), writeErr => {
+			fs.writeFile('src/user.json', JSON.stringify(existingUsers), writeErr => {
 				if (writeErr) {
 					console.error(writeErr);
 					res.status(500).send('Error (Saving)');
