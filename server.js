@@ -5,11 +5,19 @@ import mongoose from "mongoose";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from 'url';
+import jwt from 'jsonwebtoken';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+const generateAccessToken = (userId) => {
+  const secretKey = 'our-secret-key'; 
+  const expiresIn = '12h';
+
+  return jwt.sign({ userId }, secretKey, { expiresIn });
+};
 
 
 const mongoURI = "mongodb+srv://lukacszsombor:YTFdfoJBFnl62vdW@cluster0.b0vu4xs.mongodb.net/?retryWrites=true&w=majority";
@@ -63,6 +71,7 @@ app.post('/sign-up', (req, res) => {
     email,
     password: encodedPassword,
     role: userRole,
+    access_token: generateAccessToken(email),
   };
 
   fs.writeFile('user.json', JSON.stringify(user), (err) => {
@@ -70,7 +79,7 @@ app.post('/sign-up', (req, res) => {
       console.error(err);
       res.status(500).send('Error (Saving)');
     } else {
-      res.status(200).send('User saved');
+      res.status(200).json({ message: 'User registered', access_token: user.access_token });
     }
   });
 });
@@ -101,7 +110,9 @@ app.post('/sign-in', (req, res) => {
         return;
       }
 
-      res.status(200).send('Login successful');
+      const access_token = generateAccessToken(foundUser.email);
+
+      res.status(200).json({ message: 'Login successful', access_token: access_token });
     } catch (jsonError) {
       console.error(jsonError);
       res.status(500).send('Error (Parsing JSON)');
