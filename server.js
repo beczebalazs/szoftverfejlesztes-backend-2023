@@ -106,7 +106,7 @@ app.post('/sign-up', (req, res) => {
 		access_token: generateAccessToken(email),
 	};
 
-	fs.readFile('user.json', 'utf8', (err, data) => {
+	fs.readFile('src/user.json', 'utf8', (err, data) => {
 		if (err) {
 			console.error(err);
 			res.status(500).send('Error (Reading)');
