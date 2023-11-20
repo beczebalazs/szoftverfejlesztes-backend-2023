@@ -52,6 +52,8 @@ app.get("/products", (req, res) => {
 app.post('/sign-up', (req, res) => {
   const { firstName, lastName, username, email, password, role } = req.body;
 
+  const encodedPassword = Buffer.from(password).toString('base64');
+
   const userRole = role || 'member';
 
   const user = {
@@ -59,7 +61,7 @@ app.post('/sign-up', (req, res) => {
     lastName,
     username,
     email,
-    password,
+    password: encodedPassword,
     role: userRole,
   };
 
