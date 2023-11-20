@@ -75,6 +75,41 @@ app.post('/sign-up', (req, res) => {
   });
 });
 
+app.post('/sign-in', (req, res) => {
+  const { email, password } = req.body;
+
+  fs.readFile('user.json', 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error (Reading)');
+      return;
+    }
+
+    try {
+      const users = JSON.parse(data);
+
+      const foundUser = users.find((user) => user.email === email);
+
+      if (!foundUser) {
+        res.status(404).send('User not found');
+        return;
+      }
+
+      const decodedPassword = Buffer.from(password, 'base64').toString('utf8');
+      if (foundUser.password !== decodedPassword) {
+        res.status(401).send('Invalid password');
+        return;
+      }
+
+      res.status(200).send('Login successful');
+    } catch (jsonError) {
+      console.error(jsonError);
+      res.status(500).send('Error (Parsing JSON)');
+    }
+  });
+});
+
+
 
 app.listen(3001, () => {
   console.log("Server is listening on port 3001");
