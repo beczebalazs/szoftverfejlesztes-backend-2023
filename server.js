@@ -40,7 +40,13 @@ app.get("/products", (req, res) => {
     }
 
     try {
-      const products = JSON.parse(data);
+      let products = JSON.parse(data);
+
+      const category = req.query.category;
+      if (category) {
+        products = products.filter(product => product.category === category);
+      }
+
       res.json(products);
     } catch (parseError) {
       console.error("Error parsing products.json:", parseError);
@@ -48,7 +54,6 @@ app.get("/products", (req, res) => {
     }
   });
 });
-
 
 
 app.listen(3001, () => {
