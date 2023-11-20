@@ -49,6 +49,27 @@ app.get("/products", (req, res) => {
   });
 });
 
+app.post('/signup', (req, res) => {
+  const { firstName, lastName, username, email, password } = req.body;
+
+  const user = {
+    firstName,
+    lastName,
+    username,
+    email,
+    password,
+  };
+
+  fs.writeFile('user.json', JSON.stringify(user), (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error(Saving)');
+    } else {
+      res.status(200).send('User saved');
+    }
+  });
+});
+
 
 
 app.listen(3001, () => {
