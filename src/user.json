@@ -1,0 +1,20 @@
+[
+    {
+        "firstName": "Test",
+        "lastName": "Test",
+        "username": "testtest",
+        "email": "testtest@test.com",
+        "password": "U3Ryb25nUGFzczEyMyE=",
+        "role": "member",
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ0ZXN0dGVzdEB0ZXN0LmNvbSIsImlhdCI6MTcwMDUwMTE5OSwiZXhwIjoxNzAwNTQ0Mzk5fQ.j6T-ZWagUPREarjaiU8bGWMuh7TekQ5tFlADXepnUEs"
+    },
+    {
+        "firstName": "Lukacs",
+        "lastName": "Zsombor",
+        "username": "Zsombi",
+        "email": "zsombi@gmail.com",
+        "password": "U3Ryb25nUGFzczEyMyE=",
+        "role": "member",
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJ6c29tYmlAZ21haWwuY29tIiwiaWF0IjoxNzAwNTAxNDEzLCJleHAiOjE3MDA1NDQ2MTN9.zeUV9Fz6F62fNROceta-FKuK7kC6A2ddyTt4ClvjJcc"
+    }
+]
