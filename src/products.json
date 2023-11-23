@@ -1,38 +1,42 @@
 [
-	{
-		"id": "a9fb174f-cfbd-492a-a6eb-f385d8bf7b05",
-		"image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
-		"title": "Telefon Modell 1",
-		"price": 344,
-		"rating": 4
-	},
-	{
-		"id": "a372d11a-c574-420f-8ee4-1be0c07687c3",
-		"image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
-		"title": "Telefon Modell 20",
-		"price": 481,
-		"rating": 4
-	},
-	{
-		"id": "0524f412-53e2-4b14-a0a4-8c2c44a8d7d1",
-		"image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
-		"title": "Telefon Modell 43",
-		"price": 513,
-		"rating": 4
-	},
-	{
-		"id": "45af637e-3479-4ab1-beb4-1f5c933807c3",
-		"image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
-		"title": "Telefon Modell 61",
-		"price": 265,
-		"rating": 1
-	},
-	{
-		"id": "4b290e66-f58f-47a4-97bf-83ab23571e98",
-		"image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
-		"title": "Telefon Modell 68",
-		"price": 397,
-		"rating": 4
-	}
+    {
+        "id": "a9fb174f-cfbd-492a-a6eb-f385d8bf7b05",
+        "image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
+        "title": "Telefon Modell 1",
+        "price": 344,
+        "rating": 4,
+        "category": "phones"
+    },
+    {
+        "id": "a372d11a-c574-420f-8ee4-1be0c07687c3",
+        "image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
+        "title": "Telefon Modell 20",
+        "price": 481,
+        "rating": 4,
+        "category": "headphones"
+    },
+    {
+        "id": "0524f412-53e2-4b14-a0a4-8c2c44a8d7d1",
+        "image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
+        "title": "Telefon Modell 43",
+        "price": 513,
+        "rating": 4,
+        "category": "cameras"
+    },
+    {
+        "id": "45af637e-3479-4ab1-beb4-1f5c933807c3",
+        "image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
+        "title": "Telefon Modell 61",
+        "price": 265,
+        "rating": 1,
+        "category": "laptops"
+    },
+    {
+        "id": "4b290e66-f58f-47a4-97bf-83ab23571e98",
+        "image": "https://s13emagst.akamaized.net/products/48592/48591242/images/res_ee69b28e2cc930d3bbdd088baaa92556.jpg?width=450&height=450&hash=7175C9CCBD2320BB1C2937B7BEFF8D5A",
+        "title": "Telefon Modell 68",
+        "price": 397,
+        "rating": 4,
+        "category": "tvs"
+    }
 ]
-
