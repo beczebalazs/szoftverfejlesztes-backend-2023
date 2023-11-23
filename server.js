@@ -36,26 +36,6 @@ app.get('/home', (req, res) => {
 	res.send({ message: 'Welcome to the homepage!' });
 });
 
-app.get('/products', (req, res) => {
-	const filePath = path.join(__dirname, 'src/products.json');
-
-	fs.readFile(filePath, 'utf8', (err, data) => {
-		if (err) {
-			console.error('Error reading products.json:', err);
-			res.status(500).send({ error: 'Internal Server Error' });
-			return;
-		}
-
-		try {
-			const products = JSON.parse(data);
-			res.json(products);
-		} catch (parseError) {
-			console.error('Error parsing products.json:', parseError);
-			res.status(500).send({ error: 'Internal Server Error' });
-		}
-	});
-});
-
 app.post('/sign-in', (req, res) => {
 	const { email, password } = req.body;
 
