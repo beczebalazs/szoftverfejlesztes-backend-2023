@@ -94,6 +94,7 @@ app.get("/products", (req, res) => {
       res.status(500).send({ error: "Internal Server Error" });
     }
   });
+});
   
 app.post('/sign-up', (req, res) => {
 	const { firstName, lastName, username, email, password, role } = req.body;
