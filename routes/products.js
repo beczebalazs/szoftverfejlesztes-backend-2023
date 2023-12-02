@@ -5,15 +5,24 @@ const router = express.Router();
 
 router.get('/', async (req, res) => {
 	try {
-		const category = req.query.category;
+		const { category } = req.query;
 		const query = category ? { category } : {};
 
-		const products = await Product.find(query);
+		const projection = {
+			title: 1,
+			brand: 1,
+			rating: 1,
+			images: { $slice: 1 },
+			price: 1,
+			category: 1,
+		};
+
+		const products = await Product.find(query).select(projection);
 
 		res.json(products);
 	} catch (error) {
 		console.error('Error querying the database:', error);
-		res.status(500).send({ error: 'Internal Server Error' });
+		res.status(500).json({ error: 'Internal Server Error' });
 	}
 });
 
@@ -21,7 +30,19 @@ router.get('/:id', async (req, res) => {
 	const productId = req.params.id;
 
 	try {
-		const product = await Product.findById(productId);
+		const projection = {
+			title: 1,
+			brand: 1,
+			rating: 1,
+			images: 1,
+			price: 1,
+			category: 1,
+			shortDescription: 1,
+			longDescription: 1,
+			attributes: 1,
+		};
+
+		const product = await Product.findById(productId).select(projection);
 
 		if (!product) {
 			res.status(404).json({ error: 'Product not found' });
@@ -36,3 +57,4 @@ router.get('/:id', async (req, res) => {
 });
 
 export default router;
+
