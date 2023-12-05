@@ -3,7 +3,12 @@ import mongoose from 'mongoose';
 const Order = mongoose.model(
     'Order',
     new mongoose.Schema({
-        order_id: String,
+        order_id: {
+            type: String,
+            default: function () {
+                return new mongoose.Types.ObjectId().toHexString();
+            },
+        },
         user_id: String,
         price: Number,
         products: [
