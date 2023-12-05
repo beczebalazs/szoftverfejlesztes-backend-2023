@@ -10,6 +10,7 @@ import signUpRouter from './routes/signUp.js';
 import userRouter from './routes/user.js';
 import couponRouter from './routes/coupons.js';
 import reviewRouter from './routes/reviews.js';
+import orderRouter from './routes/orders.js';
 
 const app = express();
 const PORT = 3001;
@@ -34,6 +35,7 @@ app.use('/sign-up', signUpRouter);
 app.use('/user', userRouter);
 app.use('/coupons', couponRouter);
 app.use('/review', reviewRouter);
+app.use('/order', orderRouter);
 
 app.listen(PORT, () => {
 	console.log(`Server is listening on port ${PORT}`);
