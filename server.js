@@ -34,7 +34,7 @@ app.use('/products', productsRouter);
 app.use('/sign-up', signUpRouter);
 app.use('/user', userRouter);
 app.use('/coupons', couponRouter);
-app.use('/review', reviewRouter);
+app.use('/reviews', reviewRouter);
 app.use('/order', orderRouter);
 
 app.listen(PORT, () => {
