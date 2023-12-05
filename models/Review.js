@@ -13,7 +13,6 @@ const Review = mongoose.model(
         },
         reviewDate: {
             type: Date,
-            default: Date.now,
         },
     }),
 );
