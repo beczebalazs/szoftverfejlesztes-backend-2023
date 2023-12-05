@@ -1,12 +1,12 @@
 import express from 'express';
 import Order from '../models/Order.js';
+import mongoose from 'mongoose';
 
 const router = express.Router();
 
 router.post('/order', async (req, res) => {
   try {
     const {
-      order_id,
       user_id,
       price,
       products,
@@ -20,8 +20,9 @@ router.post('/order', async (req, res) => {
       house_number,
     } = req.body;
 
+    
     const newOrder = new Order({
-      order_id,
+      order_id: new mongoose.Types.ObjectId().toHexString(),
       user_id,
       price,
       products,
