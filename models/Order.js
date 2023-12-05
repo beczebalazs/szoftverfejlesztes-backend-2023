@@ -20,10 +20,7 @@ const Order = mongoose.model(
         city: String,
         zip_code: String,
         house_number: String,
-        rendeles_datuma: {
-            type: Date,
-            default: Date.now,
-        },
+        date: String,
     }),
 );
 
