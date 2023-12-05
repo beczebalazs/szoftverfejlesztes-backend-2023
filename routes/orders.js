@@ -18,6 +18,7 @@ router.post('/order', async (req, res) => {
       city,
       zip_code,
       house_number,
+      date,
     } = req.body;
 
     
@@ -34,6 +35,7 @@ router.post('/order', async (req, res) => {
       city,
       zip_code,
       house_number,
+      date,
     });
 
     const savedOrder = await newOrder.save();
