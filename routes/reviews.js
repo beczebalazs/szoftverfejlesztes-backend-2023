@@ -15,6 +15,7 @@ router.post('/', async (req, res) => {
       username,
       description,
       rating,
+      reviewDate: new Date(), // Az aktuális dátum hozzáadása
     });
 
     const savedReview = await newReview.save();
