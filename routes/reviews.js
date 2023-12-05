@@ -7,7 +7,7 @@ const router = express.Router();
 router.use(express.json());
 
 router.post('/', async (req, res) => {
-  const { productId, username, description, rating } = req.body;
+  const { productId, username, description, rating, date} = req.body;
 
   try {
     const newReview = new Review({
