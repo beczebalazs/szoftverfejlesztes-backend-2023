@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
 		};
 
 		const products = await Product.find(query).select(projection);
+		const savedReview = await newReviews.save();
 
 		res.json(products);
 	} catch (error) {
