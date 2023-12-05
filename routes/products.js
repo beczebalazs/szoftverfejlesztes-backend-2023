@@ -39,7 +39,6 @@ router.get('/:id', async (req, res) => {
 			category: 1,
 			shortDescription: 1,
 			longDescription: 1,
-			attributes: 1,
 		};
 
 		const product = await Product.findById(productId).select(projection);
