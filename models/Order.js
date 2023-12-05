@@ -3,13 +3,13 @@ import mongoose from 'mongoose';
 const Order = mongoose.model(
     'Order',
     new mongoose.Schema({
-        order_id: {
+        orderId: {
             type: String,
             default: function () {
                 return new mongoose.Types.ObjectId().toHexString();
             },
         },
-        user_id: String,
+        userId: String,
         price: Number,
         products: [
             {
@@ -17,14 +17,14 @@ const Order = mongoose.model(
                 quantity: Number,
             },
         ],
-        first_name: String,
-        last_name: String,
+        firstName: String,
+        lastName: String,
         email: String,
         street: String,
         country: String,
         city: String,
-        zip_code: String,
-        house_number: String,
+        zipCode: String,
+        houseNumber: String,
         date: String,
     }),
 );

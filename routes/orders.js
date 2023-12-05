@@ -7,34 +7,34 @@ const router = express.Router();
 router.post('/order', async (req, res) => {
   try {
     const {
-      user_id,
+      userId,
       price,
       products,
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       email,
       street,
       country,
       city,
-      zip_code,
-      house_number,
+      zipCode,
+      houseNumber,
       date,
     } = req.body;
 
     
     const newOrder = new Order({
       order_id: new mongoose.Types.ObjectId().toHexString(),
-      user_id,
+      userId,
       price,
       products,
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       email,
       street,
       country,
       city,
-      zip_code,
-      house_number,
+      zipCode,
+      houseNumber,
       date,
     });
 
